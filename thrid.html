@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Write a program to find whether a given number is special number or not</h1>
+    <h2>please check the console for output</h2>
+    <script>
+        function factorial(num) {
+                var result = 1;
+                for (var i = 2; i <= num; i++) {
+                    result *= i;
+                }
+                return result;
+            }
+
+            function isSpecial(number) {
+                var numStr = number.toString();
+                var sum = 0;
+                for (var i = 0; i < numStr.length; i++) {
+                    sum += factorial(parseInt(numStr[i]));
+                }
+                return sum === number;
+            }
+
+            var number = parseInt(prompt("Enter a number: "));
+            if (isSpecial(number)) {
+                console.log(number + " is a special number");
+            } else {
+                console.log(number + " is not a special number");
+            }
+
+    </script>
+</body>
+
+</html>
